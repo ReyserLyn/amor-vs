@@ -1,7 +1,6 @@
 import { Outfit } from "next/font/google";
 import "./globals.css";
 import { Metadata } from "next";
-import InstallButton from "@/components/install-button";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -11,11 +10,24 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: "Amor RM",
-  description: "Esta es una app para contar el amor de Reyser y Marilyn",
+  description: "Contador de amor entre Reyser y Marilyn",
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Amor RM",
+  },
+  other: {
+    'mobile-web-app-capable': 'yes',
+  },
 };
 
 export const viewport = {
-  themeColor: "#ffffff",
+  themeColor: "#ec4899",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
 };
 
 export default function RootLayout({
@@ -28,11 +40,31 @@ export default function RootLayout({
       <head>
         <link rel="manifest" href="/manifest.json" />
         <link rel="icon" href="/icons/icon-192x192.png" />
-        <meta name="theme-color" content="#ffffff" />
+        <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
+        <meta name="theme-color" content="#ec4899" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="Amor RM" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function() {
+                  navigator.serviceWorker.register('/sw.js')
+                    .then(function(registration) {
+                      console.log('SW registered: ', registration);
+                    })
+                    .catch(function(registrationError) {
+                      console.log('SW registration failed: ', registrationError);
+                    });
+                });
+              }
+            `,
+          }}
+        />
       </head>
 
       <body className={`${outfit.className} antialiased`}>
-        <InstallButton />
         {children}
       </body>
     </html>

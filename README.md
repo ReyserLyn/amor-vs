@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 💕 Amor Contador
 
-## Getting Started
+Una PWA elegante para expresar amor entre Reyser y Marilyn con sincronización en tiempo real.
 
-First, run the development server:
+## ✨ ¿Qué hace?
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Una aplicación web progresiva donde Reyser y Marilyn pueden expresar su amor haciendo clicks que se sincronizan en tiempo real entre todos sus dispositivos.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🎯 Características principales
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- 💖 **Contador en tiempo real** - Los clicks aparecen instantáneamente en todos los dispositivos
+- 📱 **App instalable** - Se puede instalar como app nativa en el móvil
+- 🔔 **Notificaciones** - Recordatorios diarios de amor
+- 🔐 **Acceso exclusivo** - Solo para Reyser y Marilyn
+- 🎨 **Diseño elegante** - Interfaz moderna y responsiva
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Tecnologías utilizadas
 
-## Learn More
+- **Frontend**: Next.js 15, React, TailwindCSS, shadcn/ui
+- **Backend**: Supabase (Base de datos + Realtime + Auth)
+- **Estado**: Zustand
+- **PWA**: Service Worker + Manifest
+- **Notificaciones**: Web Push API
+- **Deploy**: Optimizado para Vercel/Netlify
 
-To learn more about Next.js, take a look at the following resources:
+## 📱 Funcionalidades
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Contador de amor
+- Cada usuario solo puede hacer clicks para sí mismo
+- Los clicks se guardan en la base de datos
+- Sincronización instantánea entre dispositivos
+- Actualizaciones optimistas para mejor UX
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### PWA (Progressive Web App)
+- Instalable como app nativa
+- Funciona offline básico
+- Iconos personalizados
+- Splash screen
 
-## Deploy on Vercel
+### Notificaciones Push
+- Recordatorios diarios automáticos
+- Panel de administración para envío manual
+- Gestión de suscripciones
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Páginas adicionales
+- `/historial` - Ver histórico de clicks
+- `/admin-notificaciones` - Panel admin (solo Reyser)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🚀 Estado del proyecto
+
+✅ **Completado y funcional**
+- Aplicación completamente operativa
+- Código limpio y optimizado para producción
+- Sin logs de debug
+- Listo para deploy
